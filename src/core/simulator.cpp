@@ -9,11 +9,10 @@
 #include <iostream>
 using namespace std;
 
-// ==================== 1. MOVE COMMAND ====================
+//1. MOVE COMMAND
 bool handleMoveCommand(int targetFloor, int targetRoom,int& currentFloor, int& currentRoom,int& energy, int& time,const char horizontalConn[NUM_FLOORS][ROOMS_PER_FLOOR - 1],const char inventory[MAX_INVENTORY_CAPACITY], int inventoryCount,int& emergencyTripsLeft, bool lift2Operational)
 {
-
- // check for valid floor and room numbers
+// check for valid floor and room numbers
 if (targetFloor < 1 || targetFloor > NUM_FLOORS ||targetRoom < 1 || targetRoom > ROOMS_PER_FLOOR)
  {
  cout<<"Invalid room or floor number is entered not exists"<<endl;
