@@ -296,7 +296,6 @@ if (currentFloor != 5 || currentRoom != 1)
 cout << "There is no security cabinet in this room.\n";
 return false;
 }
-}
 if (objectives[OBJ_CABINET_UNLOCKED])
 {
 cout << "Cabinet is already unlocked.\n";
