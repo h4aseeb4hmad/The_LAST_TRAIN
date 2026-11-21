@@ -64,7 +64,7 @@ bool stringEquals(const char* a, const char* b) //checking if both strings are s
         {
             return false;
         }
-        i++
+        i++;
     }
     return a[i]==b[i];
 }
