@@ -109,3 +109,37 @@ char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM],int entity
 in.close();
 return true;
 }
+
+//WRITE GAME SUMMARY
+void writeGameSummaryReport(const char* filename,int score, int remainingEnergy, int remainingTime,const bool objectives[NUM_OBJECTIVES], bool victory)
+{
+ ofstream out(filename);
+ if (!out)
+ {
+ cout << "Error: Could not open " << filename << " to write summary.\n";
+ return;
+ }
+
+ out << "=========================================\n";
+ out << "       THE LAST TRAIN - GAME SUMMARY     \n";
+ out << "=========================================\n";
+ out << "Mission Result : " << (victory ? "VICTORY" : "DEFEAT") << "\n";
+ out << "Final Score : " << score << " / 520\n";
+ out << "Remaining Energy : " << remainingEnergy << "\n";
+ out << "Remaining Time : " << remainingTime << "\n";
+ out << "\n--- Objectives Checklist ---\n";
+ out << "Master Key Collected : " << (objectives[OBJ_MASTER_KEY] ? "Yes" : "No") << "\n";
+ out << "Clue Digit 4 Found : " << (objectives[OBJ_CLUE_4] ? "Yes" : "No") << "\n";
+ out << "Clue Digit 2 Found : " << (objectives[OBJ_CLUE_2] ? "Yes" : "No") << "\n";
+ out << "Clue Digit 7 Found : " << (objectives[OBJ_CLUE_7] ? "Yes" : "No") << "\n";
+ out << "Cabinet Unlocked : " << (objectives[OBJ_CABINET_UNLOCKED] ? "Yes" : "No") << "\n";
+ out << "Train Key Acquired : " << (objectives[OBJ_TRAIN_KEY] ? "Yes" : "No") << "\n";
+ out << "Fuse Installed : " << (objectives[OBJ_FUSE_INSTALLED] ? "Yes" : "No") << "\n";
+ out << "Lift Pass Collected : " << (objectives[OBJ_LIFT_PASS] ? "Yes" : "No") << "\n";
+ out << "Passenger Rescued : " << (objectives[OBJ_PASSENGER_RESCUED] ? "Yes" : "No") << "\n";
+ out << "Cat Secured : " << (objectives[OBJ_CAT_SECURED] ? "Yes" : "No") << "\n";
+ out << "Train Prepared : " << (objectives[OBJ_TRAIN_PREPARED] ? "Yes" : "No") << "\n";
+ out << "=========================================\n";
+
+ out.close();
+}
