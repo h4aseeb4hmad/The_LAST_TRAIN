@@ -2,6 +2,7 @@
 #include "util.h"
 
 // Terminal UI and dashboard rendering using primitive parameters
+
 #include "level.h"
 #include<iostream>
 #include<string>
@@ -33,7 +34,7 @@ string makeBar(int value,int maxValue) //builds a text bar like [######.....]
     return bar;
 }
 
-bool validRoom(int floor,int room)
+ static bool validRoom(int floor,int room)
 {
     if(floor<1 || floor>NUM_FLOORS)
     {
