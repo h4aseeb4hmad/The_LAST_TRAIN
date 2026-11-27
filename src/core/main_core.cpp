@@ -38,6 +38,12 @@ int main() {
         return 1;
     }
 
+    if (!validateStartingRoom(playerFloor, playerRoom, horizontalConn)) 
+    {
+    std::cerr << "Error: Invalid starting room!\n";
+    return 1;
+     }
+
     std::cout << "===========================================\n";
     std::cout << " THE LAST TRAIN - SIMULATION INITIALIZED   \n";
     std::cout << "===========================================\n";
