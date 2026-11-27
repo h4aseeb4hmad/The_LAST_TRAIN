@@ -84,6 +84,8 @@ char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM],int entity
     in >> inventory[i];
     }
 
+    
+
  // Objectives
  for (int i=0; i < NUM_OBJECTIVES; i++)
  {
@@ -143,5 +145,6 @@ void writeGameSummaryReport(const char* filename,int score, int remainingEnergy,
 
  out.close();
 }
+
 
 
