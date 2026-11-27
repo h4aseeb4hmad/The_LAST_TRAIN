@@ -73,7 +73,7 @@ char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM],int entity
  playerFloor = clampInt(playerFloor, 1, NUM_FLOORS);
  playerRoom = clampInt(playerRoom, 1, ROOMS_PER_FLOOR);
  energy = clampInt(energy, 0, MAX_ENERGY);
- time = clampInt(time, 0, 100);
+ time = clampInt(time, 0, MAX_TIME);
 
  // Inventory
  in >> inventoryCount;
@@ -84,7 +84,6 @@ char roomEntities[NUM_FLOORS][ROOMS_PER_FLOOR][MAX_ENTITIES_PER_ROOM],int entity
     in >> inventory[i];
     }
 
-    
 
  // Objectives
  for (int i=0; i < NUM_OBJECTIVES; i++)
